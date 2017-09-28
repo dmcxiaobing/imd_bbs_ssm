@@ -34,18 +34,18 @@
             <nav class="mdl-navigation">
                 <c:choose>
                     <c:when test="${username != null}">
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/user/listUserInfo?username=${username}">${username}</a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/user/listUserInfo?username=${username}">${username}</a>
                         <c:if test="${username == 'admin'}">
-                            <a class="mdl-navigation__link mdl-color-text--black" href="/admin/manageCenter">登入管理后台</a>
+                            <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/admin/manageCenter">登入管理后台</a>
                         </c:if>
-                        <a class="mdl-navigation__link mdl-color-text--black" href="/addPost?userName=${username}&boardId=${boardId}">
+                        <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/addPost?userName=${username}&boardId=${boardId}">
                             发布新主题
                         </a>
-                        <a class="mdl-navigation__link mdl-color-text--black" href="/user/loginOut">注销</a>
+                        <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/user/loginOut">注销</a>
                     </c:when>
                     <c:when test="${username == null}">
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/userLogin">登录 </a>
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/userRegister">注册</a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/userLogin">登录 </a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/userRegister">注册</a>
                     </c:when>
                 </c:choose>
             </nav>
@@ -79,7 +79,7 @@
                                 <c:when test="${username != null && username == 'admin'}">
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-js-button mdl-color-text--pink-400"
-                                           href="/admin/deletePost?postId=${post.postId}&postBoardId=${post.postBoardId}">删除</a>
+                                           href="${pageContext.request.contextPath}/admin/deletePost?postId=${post.postId}&postBoardId=${post.postBoardId}">删除</a>
                                     </div>
                                 </c:when>
                             </c:choose>

@@ -34,15 +34,15 @@
                 <c:choose>
                     <c:when test="${username != null}">
                         <a class="mdl-navigation__link mdl-color-text--pink-400"
-                           href="/user/listUserInfo?username=${username}">${username}</a>
+                           href="${pageContext.request.contextPath}/user/listUserInfo?username=${username}">${username}</a>
                         <c:if test="${username == 'admin'}">
-                            <a class="mdl-navigation__link mdl-color-text--black" href="/admin/manageCenter">登入管理后台</a>
+                            <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/admin/manageCenter">登入管理后台</a>
                         </c:if>
-                        <a class="mdl-navigation__link mdl-color-text--black" href="/user/loginOut">注销</a>
+                        <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/user/loginOut">注销</a>
                     </c:when>
                     <c:when test="${username == null}">
-                        <a href="/userLogin" class="mdl-navigation__link mdl-color-text--pink-400">登录</a>
-                        <a href="/userRegister" class="mdl-navigation__link mdl-color-text--pink-400">注册</a>
+                        <a href="${pageContext.request.contextPath}/userLogin" class="mdl-navigation__link mdl-color-text--pink-400">登录</a>
+                        <a href="${pageContext.request.contextPath}/userRegister" class="mdl-navigation__link mdl-color-text--pink-400">注册</a>
                     </c:when>
                 </c:choose>
             </nav>
@@ -86,7 +86,7 @@
                                     <c:if test="${username == reply.replyUserName or username == 'admin'}">
                                         <div class="mdl-card__actions" align="right">
                                             <a class="mdl-button mdl-js-button mdl-color-text--pink-400"
-                                               href="/admin/deleteReply?replyId=${reply.replyId}&replyPostId=${reply.replyPostId}">
+                                               href="${pageContext.request.contextPath}/admin/deleteReply?replyId=${reply.replyId}&replyPostId=${reply.replyPostId}">
                                                 删除
                                             </a>
                                         </div>
@@ -107,7 +107,7 @@
                         <c:when test="${username != null}">
                             <div align="right" class="center card-width">
                                 <a class="mdl-button mdl-js-button mdl-color--pink-400 mdl-color-text--white"
-                                   href="/addReply?replyPostId=${post.postId}&replyUserName=${username}">
+                                   href="${pageContext.request.contextPath}/addReply?replyPostId=${post.postId}&replyUserName=${username}">
                                     立即回复
                                 </a>
                             </div>

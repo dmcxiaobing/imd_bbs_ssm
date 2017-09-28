@@ -11,14 +11,14 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--扫描控制器-->
     <context:component-scan base-package="com.david.imdbbsssm.web.controller"/>
-<!--    <context:component-scan base-package="com.excited.dao"/>
-    <context:component-scan base-package="com.excited.domain"/>
-    <context:component-scan base-package="com.excited.service"/>-->
+    <context:component-scan base-package="com.david.imdbbsssm.dao"/>
+    <context:component-scan base-package="com.david.imdbbsssm.domain"/>
+    <context:component-scan base-package="com.david.imdbbsssm.service"/>
     <!--开启注解-->
     <mvc:annotation-driven/>
     <!--静态资源访问-->
     <mvc:default-servlet-handler/>
-<!--<mvc:resources mapping="/resources/**" location="/resources/"/> -->
+    <!--<mvc:resources mapping="/resources/**" location="/resources/"/> -->
     <!--页面控制器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>

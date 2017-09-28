@@ -32,12 +32,12 @@
             <nav class="mdl-navigation">
                 <c:choose>
                     <c:when test="${username != null}">
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/user/listUserInfo?username=${username}">${username}</a>
-                        <a class="mdl-navigation__link mdl-color-text--black" href="/user/loginOut">注销</a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/user/listUserInfo?username=${username}">${username}</a>
+                        <a class="mdl-navigation__link mdl-color-text--black" href="${pageContext.request.contextPath}/user/loginOut">注销</a>
                     </c:when>
                     <c:when test="${username == null}">
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/userLogin">登录</a>
-                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="/userRegister">注册</a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/userLogin">登录</a>
+                        <a class="mdl-navigation__link mdl-color-text--pink-400" href="${pageContext.request.contextPath}/userRegister">注册</a>
                     </c:when>
                 </c:choose>
             </nav>
